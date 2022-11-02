@@ -25,7 +25,7 @@ python3 -m venv $VIRTUALENV_BASE_PATH/parking_api
 $VIRTUALENV_BASE_PATH/parking_api/bin/pip install -r $PROJECT_BASE_PATH/parking-rest-api/requirements.txt
 
 # Run migrations
-cd $PROJECT_BASE_PATH/parking-rest-api/src
+cd $PROJECT_BASE_PATH/parking-rest-api/
 
 # Setup Supervisor to run our uwsgi process.
 cp $PROJECT_BASE_PATH/parking-rest-api/deploy/supervisor_parking_api.conf /etc/supervisor/conf.d/parking_api.conf
