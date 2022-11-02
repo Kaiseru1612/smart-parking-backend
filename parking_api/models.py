@@ -1,3 +1,4 @@
+=======
 from unicodedata import decimal
 import uuid
 from django.db import models
@@ -20,4 +21,3 @@ class ParkingLot(models.Model):
     def __str__(self):
         """Return the model as a string"""
         return self.id
-
