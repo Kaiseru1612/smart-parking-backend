@@ -1,4 +1,3 @@
-=======
 from unicodedata import decimal
 import uuid
 from django.db import models

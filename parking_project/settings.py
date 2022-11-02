@@ -1,5 +1,4 @@
 
-=======
 """
 Django settings for parking_project project.
 
