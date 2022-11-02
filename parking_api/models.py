@@ -1,3 +1,4 @@
+=======
 from unicodedata import decimal
 import uuid
 from django.db import models
@@ -14,7 +15,9 @@ class ParkingLot(models.Model):
     # area = polimodels.PolygonField(default=((0.0, 0.0), (0.0, 50.0), (50.0, 50.0), (50.0, 0.0), (0.0, 0.0)) )
     date_created=models.DateTimeField(auto_now_add=True)
 
+
+
+    
     def __str__(self):
         """Return the model as a string"""
         return self.id
-
