@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +26,10 @@ SECRET_KEY = 'django-insecure-&0^542!d-@qciowi&+nl5525$f3%m)4ta%wi4di=%s-029o63f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://ec2-34-209-153-151.us-west-2.compute.amazonaws.com/',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'parking_api',
     'drf_yasg',
+    'django.contrib.gis',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +132,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_ROOT = 'static/'
+
+django_heroku.settings(locals())

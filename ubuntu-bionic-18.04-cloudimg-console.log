@@ -674,4 +674,10 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqlnEbQsUSe4OC7/pMAPGLIHgbGZ1x2i3ejFCQ+YsU
 [   40.745843] cloud-init[2371]: Cloud-init v. 22.2-0ubuntu1~18.04.3 finished at Wed, 02 Nov 2022 04:18:29 +0000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 40.73 seconds
 [[0;32m  OK  [0m] Started Execute cloud user/final scripts.
 [[0;32m  OK  [0m] Reached target Cloud-init target.
-
+[ 5530.857259] watchdog: BUG: soft lockup - CPU#1 stuck for 23s! [kworker/1:3:527]
+[ 5558.851470] watchdog: BUG: soft lockup - CPU#1 stuck for 23s! [kworker/1:3:527]
+[ 5565.469667] INFO: rcu_sched detected stalls on CPUs/tasks:
+[ 5565.485825] 	0-...!: (1 GPs behind) idle=ed6/140000000000000/0 softirq=72803/72804 fqs=0 
+[ 5565.492224] 	(detected by 1, t=15003 jiffies, g=22645, c=22644, q=55)
+[ 5565.502172] rcu_sched kthread starved for 15003 jiffies! g22645 c22644 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=1
+[ 5590.875106] watchdog: BUG: soft lockup - CPU#1 stuck for 22s! [kworker/1:3:527]
