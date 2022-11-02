@@ -11,7 +11,7 @@ class ParkingLot(models.Model):
     total_space = models.DecimalField(max_digits=3, decimal_places=0)
     occopied_space = models.DecimalField(max_digits=3, decimal_places=0)
     price = models.DecimalField(max_digits=7, decimal_places=0)
-    # area = polimodels.PolygonField()
+    # area = polimodels.PolygonField(default=((0.0, 0.0), (0.0, 50.0), (50.0, 50.0), (50.0, 0.0), (0.0, 0.0)) )
     date_created=models.DateTimeField(auto_now_add=True)
 
 
