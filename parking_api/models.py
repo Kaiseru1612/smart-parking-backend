@@ -14,6 +14,9 @@ class ParkingLot(models.Model):
     # area = polimodels.PolygonField()
     date_created=models.DateTimeField(auto_now_add=True)
 
+
+
+    
     def __str__(self):
         """Return the model as a string"""
         return self.id
