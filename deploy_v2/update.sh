@@ -2,11 +2,11 @@
 
 set -e
 
-PROJECT_BASE_PATH='/usr/local/apps/parking-api'
+PROJECT_BASE_PATH='/usr/local/apps/parking-rest-api'
 
 git pull
 $PROJECT_BASE_PATH/env/bin/python manage.py migrate
 $PROJECT_BASE_PATH/env/bin/python manage.py collectstatic --noinput
-supervisorctl restart parking-api
+supervisorctl restart parking_api
 
 echo "DONE! :)"
