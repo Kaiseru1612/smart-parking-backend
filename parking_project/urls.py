@@ -2,11 +2,13 @@ from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.db import router
 from django.urls import path, include
-from parking_api.views import ParkingLotViewset
+# from parking_api.views import ParkingLotViewset
 from rest_framework.routers import DefaultRouter
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from profiles_api import views as user_views
+from parking_lot import views as parking_views
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -23,7 +25,9 @@ schema_view = get_schema_view(
 
 router=DefaultRouter()
 
-router.register('parkinglots', ParkingLotViewset)
+router.register('profile', user_views.UserProfileViewSet)
+router.register('feed', user_views.UserProfileFeedViewSet)
+router.register('parking-lot', parking_views.ParkingLotViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
