@@ -143,3 +143,11 @@ static/
 !.elasticbeanstalk/*.global.yml
 
 *,log
+
+
+env
+__pycache__
+.idea
+*.sqlite3
+.db
+.env
