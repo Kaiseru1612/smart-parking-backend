@@ -1,9 +1,11 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 from django.conf import settings
 
+from parking_lot.models import ParkingLot
 
 class UserProfileManager(BaseUserManager):
     """Manager for user profiles"""
@@ -41,6 +43,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     phone_numeber = models.CharField(default='',max_length=255, unique=True)
     is_employee = models.BooleanField(default=False)
     # is_staff = models.BooleanField(default=False)
+    # booking = models.ManyToManyField(Booking)
 
     objects = UserProfileManager()
 

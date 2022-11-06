@@ -9,6 +9,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from profiles_api import views as user_views
 from parking_lot import views as parking_views
+from booking import views as booking_views
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -28,6 +29,8 @@ router=DefaultRouter()
 router.register('profile', user_views.UserProfileViewSet)
 router.register('feed', user_views.UserProfileFeedViewSet)
 router.register('parking-lot', parking_views.ParkingLotViewset)
+router.register('corner', parking_views.CornerViewset)
+router.register('bookings', booking_views.BookingViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

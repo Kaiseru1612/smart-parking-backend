@@ -9,8 +9,8 @@ from rest_framework.settings import api_settings
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.permissions import IsAuthenticated
 
-from .models import ParkingLot
-from .serializers import ParkingLotSerializer
+from .models import Corner, ParkingLot
+from .serializers import CornerSerializer, ParkingLotSerializer
 
 class ParkingLotViewset(viewsets.ModelViewSet):
     serializer_class=ParkingLotSerializer
@@ -20,12 +20,6 @@ class ParkingLotViewset(viewsets.ModelViewSet):
         """Create a hello message with our name"""
         serializer = self.serializer_class(data=request.data)
 
-        if serializer.is_valid():
-            name = serializer.validated_data.get('name')
-            message = f'Created {name}'
-            return Response({'message':message})
-        else:
-            return Response(
-                serializer.errors,
-                status=status.HTTP_400_BAD_REQUEST
-            )
+class CornerViewset(viewsets.ModelViewSet):
+    serializer_class = CornerSerializer
+    queryset=Corner.objects.all()
