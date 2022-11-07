@@ -1,8 +1,8 @@
 from unicodedata import decimal
 import uuid
 from django.db import models
-from django.contrib.gis.geos import Point
-from django.contrib.gis.db import models as polimodels
+# from django.contrib.gis.geos import Point
+# from django.contrib.gis.db import models as polimodels
 
 # Create your models here.
 
