@@ -166,3 +166,6 @@ django_heroku.settings(locals())
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
