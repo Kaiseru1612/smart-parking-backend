@@ -9,8 +9,11 @@ from django.db import models
 
 class Corner(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # longtitude = models.FloatField(default=0)
+    # lattitude = models.FloatField(default=0)
     longtitude = models.FloatField(default=0)
     lattitude = models.FloatField(default=0)
+    
 
 class ParkingLot(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
