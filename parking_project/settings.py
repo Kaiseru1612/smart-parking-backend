@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'profiles_api',
     'parking_lot',
-    'django.contrib.gis',
+    # 'django.contrib.gis',
     'booking',
 ]
 
