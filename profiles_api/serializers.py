@@ -12,7 +12,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.UserProfile
-        fields = ('id', 'email', 'name', 'is_employee', 'license_plate', 'password')
+        fields = ('id', 'email', 'name', 'is_employee', 'password')
         extra_kwargs = {
             'password': {
                 'write_only': True,

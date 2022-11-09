@@ -14,10 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = '574037a99042f7c2d37452e25c4573ee'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '*',
@@ -170,3 +170,5 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 # GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+
+SWAGGER_SETTINGS = { "DEFAULT_GENERATOR_CLASS": "rest_framework.schemas.generators.BaseSchemaGenerator", }

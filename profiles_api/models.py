@@ -10,7 +10,7 @@ from parking_lot.models import ParkingLot
 class UserProfileManager(BaseUserManager):
     """Manager for user profiles"""
 
-    def create_user(self, email, name, license, password=None):
+    def create_user(self, email, name, license='', password=None):
         """Create a new user profile"""
         if not email:
             raise ValueError('Users must have an email address')
@@ -25,10 +25,11 @@ class UserProfileManager(BaseUserManager):
 
     def create_superuser(self, email, name, password):
         """Create and save a new superuser with given details"""
-        user = self.create_user(email, name, password=password, license='')
+        user = self.create_user(email=email, name=name, password=password)
 
         user.is_superuser = True
         user.is_employee = True
+        user,is_staff = True
         user.save(using=self._db)
 
         return user
@@ -40,15 +41,15 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
     license_plate = models.CharField(default='',max_length=255, unique=True)
-    phone_numeber = models.CharField(default='',max_length=255, unique=True)
+    phone_number = models.CharField(default='',max_length=255, unique=True)
     is_employee = models.BooleanField(default=False)
-    # is_staff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     # booking = models.ManyToManyField(Booking)
 
     objects = UserProfileManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'license_plate', 'is_employee']
+    REQUIRED_FIELDS = ['name']
 
     def get_full_name(self):
         """Retrieve full name for user"""
@@ -61,8 +62,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     def get_license_palte(self):
         return self.license_plate
 
-    # def is_staff(self):
-    #     return self.is_staff
+    def is_staff(self):
+        return self.is_staff
 
     def __str__(self):
         """Return string representation of user"""
