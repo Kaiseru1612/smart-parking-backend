@@ -24,7 +24,6 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://deploy-admin-smart-parking.herokuapp.com']
 
 # Application definition
 
